@@ -3,26 +3,47 @@ import Calendar from 'react-calendar';
 // カレンダーの基本デザイン（CSS）を読み込む
 import 'react-calendar/dist/Calendar.css';
 
-// 1. VALORANTの大会データ（ダミー）
+// 1. VALORANTの大会データ（Valorant Champions 2026）
 const matchData = [
   {
     id: 1,
-    date: '2026-10-19', // 今日の日付
-    event: 'VCT Pacific',
-    match: 'ZETA DIVISION vs Paper Rex',
+    date: '2026-09-24',
+    event: 'Valorant Champions 2026 - Group Stage',
+    match: 'Team Liquid vs Paper Rex',
     result: '1 - 2'
   },
   {
     id: 2,
-    date: '2026-10-20', // 明日の日付
-    event: 'VCT Pacific',
-    match: 'DetonatioN FocusMe vs DRX',
-    result: '0 - 2'
+    date: '2026-10-10',
+    event: 'Valorant Champions 2026 - Upper Semifinals',
+    match: 'NRG vs LOUD',
+    result: '1 - 2'
+  },
+  {
+    id: 3,
+    date: '2026-10-16',
+    event: 'Valorant Champions 2026 - Upper Final',
+    match: 'Team Vitality vs LOUD',
+    result: '1 - 2'
+  },
+  {
+    id: 4,
+    date: '2026-10-17',
+    event: 'Valorant Champions 2026 - Lower Final',
+    match: 'Team Vitality vs 100 Thieves',
+    result: '3 - 1'
+  },
+  {
+    id: 5,
+    date: '2026-10-18',
+    event: 'Valorant Champions 2026 - Grand Final',
+    match: 'LOUD vs Team Vitality',
+    result: '3 - 1'
   }
 ];
 function App() {
   // 選択された日付を記憶する場所（最初は「今日」にする）
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(new Date('2026-10-18'));
   // 2. カレンダーで選択した日付を 'YYYY-MM-DD' 形式に変換
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -42,23 +63,20 @@ function App() {
         value={date} 
         // ▼▼ ここから下の行を追加 ▼▼
         tileContent={({ date, view }) => {
-          // 月表示の時だけマークをつける
           if (view === 'month') {
             const y = date.getFullYear();
             const m = String(date.getMonth() + 1).padStart(2, '0');
             const d = String(date.getDate()).padStart(2, '0');
             const checkDate = `${y}-${m}-${d}`;
 
-            // matchDataの中に、カレンダーのマスと同じ日付の試合があるかチェック
             const hasMatch = matchData.some(match => match.date === checkDate);
 
-            // 試合があれば、VALORANTっぽい赤色の丸を表示
             if (hasMatch) {
               return (
                 <div style={{
                   height: '6px',
                   width: '6px',
-                  backgroundColor: '#ff4655', // VALORANTレッド
+                  backgroundColor: '#ff4655',
                   borderRadius: '50%',
                   margin: 'auto',
                   marginTop: '4px'
@@ -66,7 +84,7 @@ function App() {
               );
             }
           }
-          return null; // 試合がない日は何も表示しない
+          return null;
         }}
         // ▲▲ ここまで追加 ▲▲
       />
