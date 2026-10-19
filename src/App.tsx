@@ -40,6 +40,35 @@ function App() {
       <Calendar 
         onChange={(newDate) => setDate(newDate as Date)} 
         value={date} 
+        // ▼▼ ここから下の行を追加 ▼▼
+        tileContent={({ date, view }) => {
+          // 月表示の時だけマークをつける
+          if (view === 'month') {
+            const y = date.getFullYear();
+            const m = String(date.getMonth() + 1).padStart(2, '0');
+            const d = String(date.getDate()).padStart(2, '0');
+            const checkDate = `${y}-${m}-${d}`;
+
+            // matchDataの中に、カレンダーのマスと同じ日付の試合があるかチェック
+            const hasMatch = matchData.some(match => match.date === checkDate);
+
+            // 試合があれば、VALORANTっぽい赤色の丸を表示
+            if (hasMatch) {
+              return (
+                <div style={{
+                  height: '6px',
+                  width: '6px',
+                  backgroundColor: '#ff4655', // VALORANTレッド
+                  borderRadius: '50%',
+                  margin: 'auto',
+                  marginTop: '4px'
+                }} />
+              );
+            }
+          }
+          return null; // 試合がない日は何も表示しない
+        }}
+        // ▲▲ ここまで追加 ▲▲
       />
       {/* 4. 試合結果を表示するエリア */}
       <div style={{ marginTop: '20px', padding: '15px', border: '1px solid #ccc', borderRadius: '8px' }}>
