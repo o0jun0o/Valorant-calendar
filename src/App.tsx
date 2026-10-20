@@ -111,6 +111,11 @@ function App() {
                   <div style={{ color: '#ff4655', fontSize: '0.9rem' }}>{match.event}</div>
                   <div className="team-name">{match.match}</div>
                 </div>
+                <div className="team-logo-container">
+                  <img src={match.team1Logo} className="team-logo" alt="Team1" />
+                  <span style={{ fontWeight: 'bold', color: '#ff4655' }}>VS</span>
+                  <img src={match.team2Logo} className="team-logo" alt="Team2" />
+                </div>
                 <div className="match-time">{match.result}</div>
               </li>
             ))}

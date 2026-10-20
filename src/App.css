@@ -78,3 +78,20 @@ body {
   margin: 0 auto;   /* 左右の余白を自動にして中央揃え */
   padding: 40px 20px;
 }
+/* デフォルト（スマホなどの狭い画面）ではロゴエリアを【非表示】にする */
+.team-logo-container {
+  display: none; 
+}
+
+/* 画面幅が600px以上（PCサイズ）の時だけ、ロゴエリアを【表示】する */
+@media (min-width: 600px) {
+  .team-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+.team-logo {
+  border-radius: 4px;
+}
