@@ -1,7 +1,9 @@
+
 /* アプリ全体の背景と文字色（ダークテーマ） */
 body {
-  background-color: #0f1923; /* VALORANT特有の深いネイビーグレー */
-  color: #ece8e1; /* オフホワイト */
+  background: radial-gradient(circle at top center, #8a252c 0%, #0f1923 50%, #000000 100%);
+  background-attachment: fixed;
+  color: #ece8e1;
   font-family: sans-serif;
 }
 
@@ -42,4 +44,37 @@ body {
 /* 「今日」の日付 */
 .react-calendar__tile--now {
   background-color: #2a2e33 !important;
+}
+
+/* ▼▼ ここから下を追加 ▼▼ */
+/* ゲーム内UI風の試合リスト（ダークグレーの帯＋右端の白線） */
+.match-list-item {
+  background-color: rgba(40, 40, 40, 0.6);
+  border-right: 4px solid #ece8e1;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* チーム名のテキスト設定 */
+.team-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* 試合結果（時間）のテキスト設定 */
+.match-time {
+  color: #f7d559; /* ゲーム内風のゴールド */
+  font-weight: bold;
+}
+/* ▲▲ ここまで追加 ▲▲ */
+/* アプリ全体を画面の中央に配置し、横幅が広がりすぎないようにする */
+.app-wrapper {
+  max-width: 800px; /* 最大幅を固定 */
+  margin: 0 auto;   /* 左右の余白を自動にして中央揃え */
+  padding: 40px 20px;
 }

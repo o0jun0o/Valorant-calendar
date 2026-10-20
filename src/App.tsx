@@ -11,35 +11,45 @@ const matchData = [
     date: '2026-09-24',
     event: 'Valorant Champions 2026 - Group Stage',
     match: 'Team Liquid vs Paper Rex',
-    result: '1 - 2'
+    result: '1 - 2',
+    team1Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=TL',
+    team2Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=PRX'
   },
   {
     id: 2,
     date: '2026-10-10',
     event: 'Valorant Champions 2026 - Upper Semifinals',
     match: 'NRG vs LOUD',
-    result: '1 - 2'
+    result: '1 - 2',
+    team1Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=NRG',
+    team2Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=LOUD'
   },
   {
     id: 3,
     date: '2026-10-16',
     event: 'Valorant Champions 2026 - Upper Final',
     match: 'Team Vitality vs LOUD',
-    result: '1 - 2'
+    result: '1 - 2',
+    team1Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=Team Vitality',
+    team2Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=LOUD'
   },
   {
     id: 4,
     date: '2026-10-17',
     event: 'Valorant Champions 2026 - Lower Final',
     match: 'Team Vitality vs 100 Thieves',
-    result: '3 - 1'
+    result: '3 - 1',
+    team1Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=Team Vitality',
+    team2Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=100 Thieves'
   },
   {
     id: 5,
     date: '2026-10-18',
     event: 'Valorant Champions 2026 - Grand Final',
     match: 'LOUD vs Team Vitality',
-    result: '3 - 1'
+    result: '3 - 1',
+    team1Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=LOUD',
+    team2Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=Team Vitality'
   }
 ];
 function App() {
@@ -96,10 +106,12 @@ function App() {
         {selectedMatches.length > 0 ? (
           <ul>
             {selectedMatches.map((match) => (
-              <li key={match.id} style={{ marginBottom: '10px' }}>
-                <strong style={{ color: '#ff4655' }}>{match.event}</strong><br />
-                対戦カード: {match.match} <br />
-                結果: <strong>{match.result}</strong>
+              <li key={match.id} className="match-list-item">
+                <div>
+                  <div style={{ color: '#ff4655', fontSize: '0.9rem' }}>{match.event}</div>
+                  <div className="team-name">{match.match}</div>
+                </div>
+                <div className="match-time">{match.result}</div>
               </li>
             ))}
           </ul>
