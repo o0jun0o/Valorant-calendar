@@ -1,0 +1,45 @@
+/* アプリ全体の背景と文字色（ダークテーマ） */
+body {
+  background-color: #0f1923; /* VALORANT特有の深いネイビーグレー */
+  color: #ece8e1; /* オフホワイト */
+  font-family: sans-serif;
+}
+
+/* カレンダー全体の枠組み */
+.react-calendar {
+  background-color: #1f2326; /* 濃いグレー */
+  border: 2px solid #ff4655; /* VALORANTレッドの枠線 */
+  border-radius: 8px;
+  color: #ece8e1;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* カレンダー内のボタン（日付など）の基本設定 */
+.react-calendar button {
+  color: #ece8e1;
+}
+
+/* 曜日表示の部分 */
+.react-calendar__month-view__weekdays {
+  color: #ff4655; /* 曜日を赤色に */
+}
+
+/* マウスを乗せたとき（ホバー）の動き */
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: rgba(255, 70, 85, 0.2); /* 薄い赤 */
+  border-radius: 4px;
+}
+
+/* 選択した日付（クリックした日） */
+.react-calendar__tile--active {
+  background-color: #ff4655 !important; /* VALORANTレッド */
+  color: white !important;
+  border-radius: 4px;
+}
+
+/* 「今日」の日付 */
+.react-calendar__tile--now {
+  background-color: #2a2e33 !important;
+}

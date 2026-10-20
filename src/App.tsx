@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Calendar from 'react-calendar';
 // カレンダーの基本デザイン（CSS）を読み込む
 import 'react-calendar/dist/Calendar.css';
+import './App.css';
 
 // 1. VALORANTの大会データ（Valorant Champions 2026）
 const matchData = [
