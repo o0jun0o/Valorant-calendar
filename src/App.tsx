@@ -41,10 +41,11 @@ const matchData = [
     result: '3 - 1'
   }
 ];
+const toDateKey = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 function App() {
-  // 選択された日付を記憶する場所（最初は「今日」にする）
-  const [date, setDate] = useState(new Date('2026-10-18'));
-  // 2. カレンダーで選択した日付を 'YYYY-MM-DD' 形式に変換
+  // 選択された日付を記憶する場所（最初は Grand Final の日にする）
+const [date, setDate] = useState(new Date(2026, 9, 18)); // 月は0始まり
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, '0');
   const day = String(date.getDate()).padStart(2, '0');
@@ -59,15 +60,12 @@ function App() {
       
       {/* カレンダーを表示するタグ */}
       <Calendar 
-        onChange={(newDate) => setDate(newDate as Date)} 
+        onChange={(newDate) => { if (newDate instanceof Date) setDate(newDate); }} 
         value={date} 
-        // ▼▼ ここから下の行を追加 ▼▼
+        
         tileContent={({ date, view }) => {
           if (view === 'month') {
-            const y = date.getFullYear();
-            const m = String(date.getMonth() + 1).padStart(2, '0');
-            const d = String(date.getDate()).padStart(2, '0');
-            const checkDate = `${y}-${m}-${d}`;
+            const checkDate = toDateKey(date);
 
             const hasMatch = matchData.some(match => match.date === checkDate);
 
@@ -86,8 +84,8 @@ function App() {
           }
           return null;
         }}
-        // ▲▲ ここまで追加 ▲▲
-      />
+        />
+      
       {/* 4. 試合結果を表示するエリア */}
       <div style={{ marginTop: '20px', padding: '15px', border: '1px solid #ccc', borderRadius: '8px' }}>
         <h2>{year}年{month}月{day}日の試合</h2>
