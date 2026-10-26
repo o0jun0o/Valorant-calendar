@@ -10,7 +10,8 @@ const matchData = [
     id: 1,
     date: '2026-09-24',
     event: 'Valorant Champions 2026 - Group Stage',
-    match: 'Team Liquid vs Paper Rex',
+    team1: 'Team Liquid',
+    team2: 'Paper Rex',
     result: '1 - 2',
     team1Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=TL',
     team2Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=PRX'
@@ -19,7 +20,8 @@ const matchData = [
     id: 2,
     date: '2026-10-10',
     event: 'Valorant Champions 2026 - Upper Semifinals',
-    match: 'NRG vs LOUD',
+    team1: 'NRG',
+    team2: 'LOUD',
     result: '1 - 2',
     team1Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=NRG',
     team2Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=LOUD'
@@ -28,7 +30,8 @@ const matchData = [
     id: 3,
     date: '2026-10-16',
     event: 'Valorant Champions 2026 - Upper Final',
-    match: 'Team Vitality vs LOUD',
+    team1: 'Team Vitality',
+    team2: 'LOUD',
     result: '1 - 2',
     team1Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=Team Vitality',
     team2Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=LOUD'
@@ -37,7 +40,8 @@ const matchData = [
     id: 4,
     date: '2026-10-17',
     event: 'Valorant Champions 2026 - Lower Final',
-    match: 'Team Vitality vs 100 Thieves',
+    team1: 'Team Vitality',
+    team2: '100 Thieves',
     result: '3 - 1',
     team1Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=Team Vitality',
     team2Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=100 Thieves'
@@ -46,7 +50,8 @@ const matchData = [
     id: 5,
     date: '2026-10-18',
     event: 'Valorant Champions 2026 - Grand Final',
-    match: 'LOUD vs Team Vitality',
+    team1: 'LOUD',
+    team2: 'Team Vitality',
     result: '3 - 1',
     team1Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=LOUD',
     team2Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=Team Vitality'
@@ -109,7 +114,7 @@ function App() {
               <li key={match.id} className="match-list-item">
                 <div>
                   <div style={{ color: '#ff4655', fontSize: '0.9rem' }}>{match.event}</div>
-                  <div className="team-name">{match.match}</div>
+                  <div className="team-name">{match.team1} vs {match.team2}</div>
                 </div>
                 <div className="team-logo-container">
                   <img src={match.team1Logo} className="team-logo" alt="Team1" />
