@@ -46,7 +46,6 @@ body {
   background-color: #2a2e33 !important;
 }
 
-/* ▼▼ ここから下を追加 ▼▼ */
 /* ゲーム内UI風の試合リスト（ダークグレーの帯＋右端の白線） */
 .match-list-item {
   background-color: rgba(40, 40, 40, 0.6);
@@ -71,7 +70,7 @@ body {
   color: #f7d559; /* ゲーム内風のゴールド */
   font-weight: bold;
 }
-/* ▲▲ ここまで追加 ▲▲ */
+
 /* アプリ全体を画面の中央に配置し、横幅が広がりすぎないようにする */
 .app-wrapper {
   max-width: 800px; /* 最大幅を固定 */
@@ -94,4 +93,33 @@ body {
 
 .team-logo {
   border-radius: 4px;
+}
+
+.app-container {
+  padding: 20px;
+}
+
+.calendar-marker {
+  height: 6px;
+  width: 6px;
+  background-color: #ff4655;
+  border-radius: 50%;
+  margin: 4px auto 0;
+}
+
+.match-list-container {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.match-event {
+  color: #ff4655;
+  font-size: 0.9rem;
+}
+
+.match-vs {
+  font-weight: bold;
+  color: #ff4655;
 }

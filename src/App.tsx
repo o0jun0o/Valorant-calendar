@@ -89,14 +89,7 @@ function App() {
 
             if (hasMatch) {
               return (
-                <div style={{
-                  height: '6px',
-                  width: '6px',
-                  backgroundColor: '#ff4655',
-                  borderRadius: '50%',
-                  margin: 'auto',
-                  marginTop: '4px'
-                }} />
+                <div className="calendar-marker" />
               );
             }
           }
@@ -105,7 +98,7 @@ function App() {
         // ▲▲ ここまで追加 ▲▲
       />
       {/* 4. 試合結果を表示するエリア */}
-      <div style={{ marginTop: '20px', padding: '15px', border: '1px solid #ccc', borderRadius: '8px' }}>
+      <div className="match-list-container">
         <h2>{year}年{month}月{day}日の試合</h2>
         
         {selectedMatches.length > 0 ? (
@@ -113,12 +106,12 @@ function App() {
             {selectedMatches.map((match) => (
               <li key={match.id} className="match-list-item">
                 <div>
-                  <div style={{ color: '#ff4655', fontSize: '0.9rem' }}>{match.event}</div>
+                  <div className="match-event">{match.event}</div>
                   <div className="team-name">{match.team1} vs {match.team2}</div>
                 </div>
                 <div className="team-logo-container">
                   <img src={match.team1Logo} className="team-logo" alt="Team1" />
-                  <span style={{ fontWeight: 'bold', color: '#ff4655' }}>VS</span>
+                  <span className="match-vs">VS</span>
                   <img src={match.team2Logo} className="team-logo" alt="Team2" />
                 </div>
                 <div className="match-time">{match.result}</div>
