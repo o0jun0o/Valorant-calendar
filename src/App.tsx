@@ -13,8 +13,8 @@ const matchData = [
     team1: 'Team Liquid',
     team2: 'Paper Rex',
     result: '1 - 2',
-    team1Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=TL',
-    team2Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=PRX'
+    team1Logo: '/tl.png',
+    team2Logo: '/prx.png'
   },
   {
     id: 2,
@@ -23,8 +23,8 @@ const matchData = [
     team1: 'NRG',
     team2: 'LOUD',
     result: '1 - 2',
-    team1Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=NRG',
-    team2Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=LOUD'
+    team1Logo: '/nrg.png',
+    team2Logo: '/loud.png'
   },
   {
     id: 3,
@@ -33,8 +33,8 @@ const matchData = [
     team1: 'Team Vitality',
     team2: 'LOUD',
     result: '1 - 2',
-    team1Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=Team Vitality',
-    team2Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=LOUD'
+    team1Logo: '/vit.png',
+    team2Logo: '/loud.png'
   },
   {
     id: 4,
@@ -43,8 +43,8 @@ const matchData = [
     team1: 'Team Vitality',
     team2: '100 Thieves',
     result: '3 - 1',
-    team1Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=Team Vitality',
-    team2Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=100 Thieves'
+    team1Logo: '/vit.png',
+    team2Logo: '/100t.png'
   },
   {
     id: 5,
@@ -53,8 +53,8 @@ const matchData = [
     team1: 'LOUD',
     team2: 'Team Vitality',
     result: '3 - 1',
-    team1Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=LOUD',
-    team2Logo: 'https://placehold.co/40x40/1f2326/ece8e1?text=Team Vitality'
+    team1Logo: '/loud.png',
+    team2Logo: '/vit.png'
   }
 ];
 function App() {
