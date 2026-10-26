@@ -85,13 +85,22 @@ function App() {
             const d = String(date.getDate()).padStart(2, '0');
             const checkDate = `${y}-${m}-${d}`;
 
-            const hasMatch = matchData.some(match => match.date === checkDate);
-
-            if (hasMatch) {
-              return (
-                <div className="calendar-marker" />
-              );
-            }
+            const match = matchData.find(match => match.date === checkDate);
+if (match) {
+  return (
+    <div className="calendar-tile-content">
+      {/* スマホ用の赤い点 */}
+      <div className="calendar-marker" />
+      {/* PC用のチームロゴ */}
+      <div className="calendar-logos">
+        <img src={match.team1Logo} alt="Team 1" />
+        <span>VS</span>
+        <img src={match.team2Logo} alt="Team 2" />
+      </div>
+    </div>
+  );
+}
+            
           }
           return null;
         }}
