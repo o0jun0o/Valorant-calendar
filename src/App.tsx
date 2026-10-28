@@ -93,9 +93,9 @@ if (match) {
       <div className="calendar-marker" />
       {/* PC用のチームロゴ */}
       <div className="calendar-logos">
-        <img src={match.team1Logo} alt="Team 1" />
+        <img src={match.team1Logo} alt={match.team1} />
         <span>VS</span>
-        <img src={match.team2Logo} alt="Team 2" />
+        <img src={match.team2Logo} alt={match.team2} />
       </div>
     </div>
   );
@@ -123,7 +123,7 @@ if (match) {
                   <span>VS</span>
                   <img src={match.team2Logo} alt={match.team2} className="team-logo"/>
                 </div>
-                <div className="match-time">{match.result}</div>
+                <div className="match-score">{match.result}</div>
               </li>
             ))}
           </ul>
