@@ -26,6 +26,12 @@ h1 {
   color: #ece8e1;
 }
 
+/* 月切り替えボタンのホバー（標準の明るいグレーを上書き） */
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: rgba(255, 70, 85, 0.2);
+}
+
 /* 曜日表示の部分 */
 .react-calendar__month-view__weekdays {
   color: #ff4655; /* 曜日を赤色に */
@@ -46,7 +52,7 @@ h1 {
 }
 
 /* 「今日」の日付 */
-.react-calendar__tile--now {
+.react-calendar__tile--now:not(.react-calendar__tile--active) {
   background-color: #2a2e33 !important;
 }
 
@@ -64,7 +70,7 @@ h1 {
 
 /* スマホ用のスコア位置（左下に配置） */
 .match-list-item > :last-child {
-  align-self: flex-start;;
+  align-self: flex-start;
   font-weight: bold;
 }
 
@@ -107,8 +113,8 @@ h1 {
   display: none; 
 }
 
-/* 画面幅が600px以上（PCサイズ）の時だけ、ロゴエリアを【表示】する */
-@media (min-width: 600px) {
+/* 画面幅が768px以上（PCサイズ）の時だけ、ロゴエリアを【表示】する */
+@media (min-width: 768px) {
   .team-logo-container {
     display: flex;
     align-items: center;
@@ -189,6 +195,10 @@ h1 {
 
 /* PC用（768px以上）：ロゴを表示 */
 @media (min-width: 768px) {
+  .calendar-marker {
+    display: none;
+  }
+  
   .calendar-logos {
     display: flex;
     justify-content: center;

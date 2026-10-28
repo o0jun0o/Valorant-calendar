@@ -70,7 +70,7 @@ function App() {
   const selectedMatches = matchData.filter(match => match.date === formattedDate);
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div className="app-wrapper">
       <h1>VALORANT カレンダー</h1>
       
       {/* カレンダーを表示するタグ */}
@@ -119,9 +119,9 @@ if (match) {
                   <div className="team-name">{match.team1} vs {match.team2}</div>
                 </div>
                 <div className="team-logo-container">
-                  <img src={match.team1Logo} className="team-logo" alt="Team1" />
-                  <span className="match-vs">VS</span>
-                  <img src={match.team2Logo} className="team-logo" alt="Team2" />
+                  <img src={match.team1Logo} alt={match.team1} className="team-logo"/>
+                  <span>VS</span>
+                  <img src={match.team2Logo} alt={match.team2} className="team-logo"/>
                 </div>
                 <div className="match-time">{match.result}</div>
               </li>
