@@ -19,6 +19,9 @@ h1 {
   color: #ece8e1;
   padding: 10px;
   font-weight: bold;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 /* カレンダー内のボタン（日付など）の基本設定 */
@@ -139,6 +142,7 @@ h1 {
   background-color: #ff4655;
   border-radius: 50%;
   margin: 4px auto 0;
+  display: block;
 }
 
 .match-list-container {
@@ -160,28 +164,13 @@ h1 {
 
 /* --- カレンダーのレスポンシブ対応 --- */
 
-/* 1. 基本設定（スマホ用） */
-.react-calendar {
-  width: 100%;
-  max-width: 400px; /* スマホでは最大400px */
-  margin: 0 auto;   /* 中央寄せ */
-}
+
 
 .react-calendar__tile {
   height: 60px; /* スマホでのマスの高さ */
 }
 
-/* 2. PC・タブレット用（画面幅が768px以上のとき） */
-@media (min-width: 768px) {
-  .react-calendar {
-    max-width: 800px; /* PCでは最大800pxまで広げる */
-  }
-  
-  .react-calendar__tile {
-    height: 100px;     /* マスを高くして大きく見せる */
-    font-size: 1.2rem; /* 日付の文字サイズも大きく */
-  }
-}
+
 
 /* --- カレンダー内のロゴ表示 --- */
 
@@ -189,16 +178,18 @@ h1 {
 .calendar-logos {
   display: none;
 }
-.calendar-marker {
-  display: block;
-}
+
 
 /* PC用（768px以上）：ロゴを表示 */
 @media (min-width: 768px) {
+  .react-calendar {
+    max-width: 800px;
+  }
+
   .calendar-marker {
     display: none;
   }
-  
+
   .calendar-logos {
     display: flex;
     justify-content: center;
