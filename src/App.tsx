@@ -57,6 +57,8 @@ const matchData = [
     team2Logo: "/vit.png",
   },
 ];
+const toDateKey = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 function App() {
   // 選択された日付を記憶する場所（最初は「今日」にする）
   const [date, setDate] = useState(new Date("2026-10-18"));
@@ -105,8 +107,8 @@ function App() {
           }
           return null;
         }}
-        // ▲▲ ここまで追加 ▲▲
       />
+
       {/* 4. 試合結果を表示するエリア */}
       <div className="match-list-container">
         <h2>
