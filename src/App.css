@@ -1,0 +1,214 @@
+
+/* アプリ全体の背景と文字色（ダークテーマ） */
+body {
+  background: radial-gradient(circle at top center, #8a252c 0%, #0f1923 50%, #000000 100%);
+  background-attachment: fixed;
+  color: #ece8e1;
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* カレンダー全体の枠組み */
+.react-calendar {
+  background-color: #1f2326; /* 濃いグレー */
+  border: 2px solid #ff4655; /* VALORANTレッドの枠線 */
+  border-radius: 8px;
+  color: #ece8e1;
+  padding: 10px;
+  font-weight: bold;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* カレンダー内のボタン（日付など）の基本設定 */
+.react-calendar button {
+  color: #ece8e1;
+}
+
+/* 月切り替えボタンのホバー（標準の明るいグレーを上書き） */
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: rgba(255, 70, 85, 0.2);
+}
+
+/* 曜日表示の部分 */
+.react-calendar__month-view__weekdays {
+  color: #ff4655; /* 曜日を赤色に */
+}
+
+/* マウスを乗せたとき（ホバー）の動き */
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: rgba(255, 70, 85, 0.2); /* 薄い赤 */
+  border-radius: 4px;
+}
+
+/* 選択した日付（クリックした日） */
+.react-calendar__tile--active {
+  background-color: #ff4655 !important; /* VALORANTレッド */
+  color: white !important;
+  border-radius: 4px;
+}
+
+/* 「今日」の日付 */
+.react-calendar__tile--now:not(.react-calendar__tile--active) {
+  background-color: #2a2e33 !important;
+}
+
+/* ゲーム内UI風の試合リスト（ダークグレーの帯＋右端の白線） */
+.match-list-item {
+  background-color: rgba(40, 40, 40, 0.6);
+  border-right: 4px solid #ece8e1;
+  margin-bottom: 10px;
+  padding: 15px 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* 縦並び */
+  gap: 12px;
+}
+
+/* スマホ用のスコア位置（左下に配置） */
+.match-list-item > :last-child {
+  align-self: flex-start;
+  font-weight: bold;
+}
+
+/* 2. PC用（768px以上）：横並びの綺麗な3分割レイアウト */
+@media (min-width: 768px) {
+  .match-list-item {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  /* PC用のスコア位置（右端に配置） */
+  .match-list-item > :last-child {
+    justify-self: end;
+    align-self: center;
+  }
+}
+
+/* チーム名のテキスト設定 */
+.team-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* 試合結果（スコア）のテキスト設定 */
+.match-score {
+  color: #f7d559; /* ゲーム内風のゴールド */
+  font-weight: bold;
+}
+
+/* アプリ全体を画面の中央に配置し、横幅が広がりすぎないようにする */
+.app-wrapper {
+  max-width: 800px; /* 最大幅を固定 */
+  margin: 0 auto;   /* 左右の余白を自動にして中央揃え */
+  padding: 40px 20px;
+}
+/* デフォルト（スマホなどの狭い画面）ではロゴエリアを【非表示】にする */
+.team-logo-container {
+  display: none; 
+}
+
+/* 画面幅が768px以上（PCサイズ）の時だけ、ロゴエリアを【表示】する */
+@media (min-width: 768px) {
+  .team-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+.team-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain; /* 画像の縦横比を維持する設定 */
+  border-radius: 4px;
+}
+
+
+
+.calendar-marker {
+  height: 6px;
+  width: 6px;
+  background-color: #ff4655;
+  border-radius: 50%;
+  margin: 4px auto 0;
+  display: block;
+}
+
+.match-list-container {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.match-event {
+  color: #ff4655;
+  font-size: 0.9rem;
+}
+
+.match-vs {
+  font-weight: bold;
+  color: #ff4655;
+}
+
+/* --- カレンダーのマス・ロゴ表示 --- */
+
+/* 基本（スマホ用）：マスの高さを固定し、ロゴを隠して赤い丸を出す */
+.react-calendar__tile {
+  height: 60px; 
+}
+
+.calendar-logos {
+  display: none;
+}
+
+
+/* PC用（768px以上）：ロゴを表示 */
+@media (min-width: 768px) {
+  .react-calendar {
+    max-width: 800px;
+  }
+
+  .calendar-marker {
+    display: none;
+  }
+
+  .calendar-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  .react-calendar__tile {
+    height: 100px;
+    font-size: 1.2rem;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-start; /* 日付の数字を上に揃える */
+    align-items: center;
+    padding-top: 15px;
+  }
+  
+  .calendar-logos img {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+  }
+  
+  .calendar-logos span {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #ff4655;
+  }
+}
