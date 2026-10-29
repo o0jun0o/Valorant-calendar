@@ -99,8 +99,8 @@ h1 {
   letter-spacing: 2px;
 }
 
-/* 試合結果（時間）のテキスト設定 */
-.match-time {
+/* 試合結果（スコア）のテキスト設定 */
+.match-score {
   color: #f7d559; /* ゲーム内風のゴールド */
   font-weight: bold;
 }
@@ -132,9 +132,7 @@ h1 {
   border-radius: 4px;
 }
 
-.app-container {
-  padding: 20px;
-}
+
 
 .calendar-marker {
   height: 6px;
@@ -162,19 +160,13 @@ h1 {
   color: #ff4655;
 }
 
-/* --- カレンダーのレスポンシブ対応 --- */
+/* --- カレンダーのマス・ロゴ表示 --- */
 
-
-
+/* 基本（スマホ用）：マスの高さを固定し、ロゴを隠して赤い丸を出す */
 .react-calendar__tile {
-  height: 60px; /* スマホでのマスの高さ */
+  height: 60px; 
 }
 
-
-
-/* --- カレンダー内のロゴ表示 --- */
-
-/* 基本（スマホ用）：ロゴを隠して赤い丸を出す */
 .calendar-logos {
   display: none;
 }
